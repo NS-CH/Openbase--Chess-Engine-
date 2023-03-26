@@ -74,7 +74,7 @@ function movePiece(piece, currentSquare, colour) {
     let allowedMoves = new Array();
     if (piece === Pieces.Pawn) {
         if (currentSquare + 8 !== null) {
-            allowedMoves.push(currentSquare + 8);
+            allowedMoves.push(Squares[currentSquare + 8]);
         }
         if (Squares[currentSquare + 9] !== null) {
             if (colour === "black") {
@@ -84,7 +84,7 @@ function movePiece(piece, currentSquare, colour) {
                     Squares[currentSquare + 9] !== Pieces.B_Pawn ||
                     Squares[currentSquare + 9] !== Pieces.B_Queen ||
                     Squares[currentSquare + 9] !== Pieces.B_Rook) {
-                    allowedMoves.push(currentSquare + 9);
+                    allowedMoves.push(Squares[currentSquare + 9]);
                 }
             }
             else {
@@ -94,7 +94,7 @@ function movePiece(piece, currentSquare, colour) {
                     Squares[currentSquare + 9] !== Pieces.Pawn ||
                     Squares[currentSquare + 9] !== Pieces.Queen ||
                     Squares[currentSquare + 9] !== Pieces.Rook) {
-                    allowedMoves.push(currentSquare + 9);
+                    allowedMoves.push(Squares[currentSquare + 9]);
                 }
             }
         }
@@ -106,7 +106,7 @@ function movePiece(piece, currentSquare, colour) {
                     Squares[currentSquare + 9] !== Pieces.B_Pawn ||
                     Squares[currentSquare + 9] !== Pieces.B_Queen ||
                     Squares[currentSquare + 9] !== Pieces.B_Rook) {
-                    allowedMoves.push(currentSquare + 9);
+                    allowedMoves.push(Squares[currentSquare + 9]);
                 }
             }
             else {
@@ -116,8 +116,18 @@ function movePiece(piece, currentSquare, colour) {
                     Squares[currentSquare + 9] !== Pieces.Pawn ||
                     Squares[currentSquare + 9] !== Pieces.Queen ||
                     Squares[currentSquare + 9] !== Pieces.Rook) {
-                    allowedMoves.push(currentSquare + 9);
+                    allowedMoves.push(Squares[currentSquare + 9]);
                 }
+            }
+        }
+        if (colour === "black") {
+            if (Squares[currentSquare] === 49, 50, 51, 52, 53, 54, 55, 56) {
+                allowedMoves.push(Squares[currentSquare + 16]);
+            }
+        }
+        else {
+            if (Squares[currentSquare] === 49, 50, 51, 52, 53, 54, 55, 56) {
+                allowedMoves.push(Squares[currentSquare + 16]);
             }
         }
     }
