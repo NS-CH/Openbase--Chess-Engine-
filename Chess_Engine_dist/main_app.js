@@ -67,68 +67,71 @@ function Board() {
     for (let l = 17; l < 49; l++) {
         Squares[l] = null;
     }
-    console.log(Squares);
 }
+console.log(Squares);
 Board();
-function movePiece(piece, currentSquare, colour) {
+function checkValidMoves(piece, currentSquare, colour) {
     let allowedMoves = new Array();
     if (piece === Pieces.Pawn) {
-        if (currentSquare + 8 !== null) {
-            allowedMoves.push(Squares[currentSquare + 8]);
+        if (Squares[currentSquare + 8] === null) {
+            allowedMoves.push(currentSquare + 8);
         }
         if (Squares[currentSquare + 9] !== null) {
             if (colour === "black") {
-                if (Squares[currentSquare + 9] !== Pieces.B_Bishop ||
-                    Squares[currentSquare + 9] !== Pieces.B_King ||
-                    Squares[currentSquare + 9] !== Pieces.B_Knight ||
-                    Squares[currentSquare + 9] !== Pieces.B_Pawn ||
-                    Squares[currentSquare + 9] !== Pieces.B_Queen ||
-                    Squares[currentSquare + 9] !== Pieces.B_Rook) {
-                    allowedMoves.push(Squares[currentSquare + 9]);
+                if (Squares[currentSquare + 9] === Pieces.Bishop ||
+                    Squares[currentSquare + 9] === Pieces.King ||
+                    Squares[currentSquare + 9] === Pieces.Knight ||
+                    Squares[currentSquare + 9] === Pieces.Pawn ||
+                    Squares[currentSquare + 9] === Pieces.Queen ||
+                    Squares[currentSquare + 9] === Pieces.Rook) {
+                    allowedMoves.push(currentSquare + 9);
                 }
             }
             else {
-                if (Squares[currentSquare + 9] !== Pieces.Bishop ||
-                    Squares[currentSquare + 9] !== Pieces.King ||
-                    Squares[currentSquare + 9] !== Pieces.Knight ||
-                    Squares[currentSquare + 9] !== Pieces.Pawn ||
-                    Squares[currentSquare + 9] !== Pieces.Queen ||
-                    Squares[currentSquare + 9] !== Pieces.Rook) {
-                    allowedMoves.push(Squares[currentSquare + 9]);
+                if (Squares[currentSquare + 9] === Pieces.B_Bishop ||
+                    Squares[currentSquare + 9] === Pieces.B_King ||
+                    Squares[currentSquare + 9] === Pieces.B_Knight ||
+                    Squares[currentSquare + 9] === Pieces.B_Pawn ||
+                    Squares[currentSquare + 9] === Pieces.B_Queen ||
+                    Squares[currentSquare + 9] === Pieces.B_Rook) {
+                    allowedMoves.push(currentSquare + 9);
                 }
             }
         }
         if (Squares[currentSquare + 7] !== null) {
             if (colour === "black") {
-                if (Squares[currentSquare + 9] !== Pieces.B_Bishop ||
-                    Squares[currentSquare + 9] !== Pieces.B_King ||
-                    Squares[currentSquare + 9] !== Pieces.B_Knight ||
-                    Squares[currentSquare + 9] !== Pieces.B_Pawn ||
-                    Squares[currentSquare + 9] !== Pieces.B_Queen ||
-                    Squares[currentSquare + 9] !== Pieces.B_Rook) {
-                    allowedMoves.push(Squares[currentSquare + 9]);
+                if (Squares[currentSquare + 9] === Pieces.Bishop ||
+                    Squares[currentSquare + 9] === Pieces.King ||
+                    Squares[currentSquare + 9] === Pieces.Knight ||
+                    Squares[currentSquare + 9] === Pieces.Pawn ||
+                    Squares[currentSquare + 9] === Pieces.Queen ||
+                    Squares[currentSquare + 9] === Pieces.Rook) {
+                    allowedMoves.push(currentSquare + 7);
                 }
             }
             else {
-                if (Squares[currentSquare + 9] !== Pieces.Bishop ||
-                    Squares[currentSquare + 9] !== Pieces.King ||
-                    Squares[currentSquare + 9] !== Pieces.Knight ||
-                    Squares[currentSquare + 9] !== Pieces.Pawn ||
-                    Squares[currentSquare + 9] !== Pieces.Queen ||
-                    Squares[currentSquare + 9] !== Pieces.Rook) {
-                    allowedMoves.push(Squares[currentSquare + 9]);
+                if (Squares[currentSquare + 9] === Pieces.B_Bishop ||
+                    Squares[currentSquare + 9] === Pieces.B_King ||
+                    Squares[currentSquare + 9] === Pieces.B_Knight ||
+                    Squares[currentSquare + 9] === Pieces.B_Pawn ||
+                    Squares[currentSquare + 9] === Pieces.B_Queen ||
+                    Squares[currentSquare + 9] === Pieces.B_Rook) {
+                    allowedMoves.push(currentSquare + 7);
                 }
             }
         }
         if (colour === "black") {
             if (Squares[currentSquare] === 49, 50, 51, 52, 53, 54, 55, 56) {
-                allowedMoves.push(Squares[currentSquare + 16]);
+                allowedMoves.push(currentSquare + 16);
             }
         }
         else {
             if (Squares[currentSquare] === 49, 50, 51, 52, 53, 54, 55, 56) {
-                allowedMoves.push(Squares[currentSquare + 16]);
+                allowedMoves.push(currentSquare + 16);
             }
         }
     }
+    console.log(allowedMoves);
 }
+checkValidMoves(Pieces.Pawn, 14, "white");
+console.log(Squares);
