@@ -1,6 +1,7 @@
 // Imports
 
-import * as PiecesImport from "./pieces";
+import * as PiecesImport from "./Importables/pieces";
+import * as Evaluation from "./Importables/evaluate";
 
 const Pieces = new PiecesImport.Pieces();
 const Squares = new Array(64);
